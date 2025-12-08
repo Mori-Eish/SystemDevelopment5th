@@ -3,6 +3,7 @@ Test suite for the Calculator class.
 """
 
 import pytest
+from hypothesis import given, strategies as st
 from calculator.calculator import Calculator, InvalidInputException
 
 
@@ -275,6 +276,83 @@ class TestDivision:
 
     def test_divide_positive_numbers(self):
         """Test dividing positive numbers."""
-        # TODO: Implement
+        # Arrange
+        calc = Calculator()
+        a = 10
+        b = 2
+        expected = 5
+
+        # Act
+        result = calc.divide(a, b)
+
+        # Assert
+        assert result == expected
+
+    def test_divide_negative_numbers(self):
+        """Test dividing two negative numbers."""
+        # Arrange
+        calc = Calculator()
+        a = -10
+        b = -2
+        expected = 5
+
+        # Act
+        result = calc.divide(a, b)
+
+        # Assert
+        assert result == expected
+
+    def test_divide_positive_and_negative(self):
+        """Test dividing positive by negative."""
+        # Arrange
+        calc = Calculator()
+        a = 10
+        b = -2
+        expected = -5
+
+        # Act
+        result = calc.divide(a, b)
+
+        # Assert
+        assert result == expected
+
+    def test_divide_negative_and_positive(self):
+        """Test dividing negative by positive."""
+        # Arrange
+        calc = Calculator()
+        a = -10
+        b = 2
+        expected = -5
+
+        # Act
+        result = calc.divide(a, b)
+
+        # Assert
+        assert result == expected
+
+    def test_divide_floats(self):
+        """Test dividing floating point numbers."""
+        # Arrange
+        calc = Calculator()
+        a = 7.5
+        b = 2.5
+        expected = 3.0
+
+        # Act
+        result = calc.divide(a, b)
+
+        # Assert
+        assert result == pytest.approx(expected)
+
+    def test_divide_by_zero(self):
+        """Test dividing by zero raises exception."""
+        # Arrange
+        calc = Calculator()
+        a = 10
+        b = 0
+
+        # Act & Assert
+        with pytest.raises(ValueError):
+            calc.divide(a, b)
 
 
