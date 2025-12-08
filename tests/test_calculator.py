@@ -113,7 +113,87 @@ class TestSubtraction:
 
     def test_subtract_positive_numbers(self):
         """Test subtracting positive numbers."""
-        # TODO: Implement
+        # Arrange
+        calc = Calculator()
+        a = 10
+        b = 3
+        expected = 7
+
+        # Act
+        result = calc.subtract(a, b)
+
+        # Assert
+        assert result == expected
+
+    def test_subtract_negative_numbers(self):
+        """Test subtracting two negative numbers."""
+        # Arrange
+        calc = Calculator()
+        a = -5
+        b = -3
+        expected = -2
+
+        # Act
+        result = calc.subtract(a, b)
+
+        # Assert
+        assert result == expected
+
+    def test_subtract_positive_and_negative(self):
+        """Test subtracting negative from positive."""
+        # Arrange
+        calc = Calculator()
+        a = 5
+        b = -3
+        expected = 8
+
+        # Act
+        result = calc.subtract(a, b)
+
+        # Assert
+        assert result == expected
+
+    def test_subtract_negative_and_positive(self):
+        """Test subtracting positive from negative."""
+        # Arrange
+        calc = Calculator()
+        a = -5
+        b = 3
+        expected = -8
+
+        # Act
+        result = calc.subtract(a, b)
+
+        # Assert
+        assert result == expected
+
+    def test_subtract_positive_with_zero(self):
+        """Test subtracting zero from positive number."""
+        # Arrange
+        calc = Calculator()
+        a = 5
+        b = 0
+        expected = 5
+
+        # Act
+        result = calc.subtract(a, b)
+
+        # Assert
+        assert result == expected
+
+    def test_subtract_floats(self):
+        """Test subtracting floating point numbers."""
+        # Arrange
+        calc = Calculator()
+        a = 7.5
+        b = 2.3
+        expected = 5.2
+
+        # Act
+        result = calc.subtract(a, b)
+
+        # Assert
+        assert result == pytest.approx(expected)
 
 
 class TestMultiplication:
@@ -121,7 +201,73 @@ class TestMultiplication:
 
     def test_multiply_positive_numbers(self):
         """Test multiplying positive numbers."""
-        # TODO: Implement
+        # Arrange
+        calc = Calculator()
+        a = 5
+        b = 3
+        expected = 15
+
+        # Act
+        result = calc.multiply(a, b)
+
+        # Assert
+        assert result == expected
+
+    def test_multiply_negative_numbers(self):
+        """Test multiplying two negative numbers."""
+        # Arrange
+        calc = Calculator()
+        a = -5
+        b = -3
+        expected = 15
+
+        # Act
+        result = calc.multiply(a, b)
+
+        # Assert
+        assert result == expected
+
+    def test_multiply_positive_and_negative(self):
+        """Test multiplying positive and negative numbers."""
+        # Arrange
+        calc = Calculator()
+        a = 5
+        b = -3
+        expected = -15
+
+        # Act
+        result = calc.multiply(a, b)
+
+        # Assert
+        assert result == expected
+
+    def test_multiply_by_zero(self):
+        """Test multiplying by zero."""
+        # Arrange
+        calc = Calculator()
+        a = 5
+        b = 0
+        expected = 0
+
+        # Act
+        result = calc.multiply(a, b)
+
+        # Assert
+        assert result == expected
+
+    def test_multiply_floats(self):
+        """Test multiplying floating point numbers."""
+        # Arrange
+        calc = Calculator()
+        a = 2.5
+        b = 4.0
+        expected = 10.0
+
+        # Act
+        result = calc.multiply(a, b)
+
+        # Assert
+        assert result == pytest.approx(expected)
 
 
 class TestDivision:
@@ -130,6 +276,5 @@ class TestDivision:
     def test_divide_positive_numbers(self):
         """Test dividing positive numbers."""
         # TODO: Implement
-
 
 
