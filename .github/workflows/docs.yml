@@ -22,7 +22,7 @@ jobs:
         run: pip install pdoc
 
       - name: Generate documentation
-        run: pdoc . -o ./docs
+        run: pdoc src.calculator -o ./docs
 
       - name: Upload documentation artifact
         uses: actions/upload-artifact@v4
